@@ -1,0 +1,73 @@
+---
+layout: layouts/fruit.njk
+eleventyNavigation:
+  key: Avacado
+  order: 3
+---
+<div></div>
+<style>
+/* Color Scheme: https://www.schemecolor.com/avocado.php */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  min-height: 100vh;
+}
+:root {
+  --skin: #356211;
+  --skin-2: #558303;
+  --skin-3: #6C8F32;
+  --pit: #AA471F;
+  --pit-2: #C15C37;
+  --body: #F2E880;
+  --width: clamp(15px, 2.5vmax, 20px);
+}
+header {
+  background-color: var(--skin);
+}
+h1,
+h1 > a[href]:visited,
+h1 > a[href] {
+  color: var(--body);
+}
+main {
+  border: var(--width) solid var(--skin);
+  border-top: var(--width) solid var(--skin-2);
+  border-left: var(--width) solid var(--skin-2);
+  flex-grow: 1;
+  background-color: var(--body);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+}
+
+main::after,
+main::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: var(--width) solid var(--skin-2);
+  border-top: var(--width) solid var(--skin-3);
+  border-left: var(--width) solid var(--skin-3);
+}
+main::before {
+  z-index: 2;
+}
+
+main > div {
+  --pit-width: calc(var(--width) * 1.5);
+  height: 15vmax;
+  width: 15vmax;
+  border-radius: 1000000px;
+  background-color: var(--pit-2);
+  border-right: var(--pit-width) solid var(--pit);
+  border-bottom: var(--pit-width) solid var(--pit);
+}
+</style>

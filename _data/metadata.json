@@ -1,17 +1,17 @@
 {
-  "title": "Your Blog Name",
-  "url": "https://example.com/",
+  "title": "It's a fruit farm!",
+  "url": "https://its-a-fruit.farm/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "A collection of fruits made with HTML and CSS",
   "feed": {
     "subtitle": "I am writing about my experiences as a naval navel-gazer.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://its-a-fruit.farm/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://its-a-fruit.farm/feed/feed.json"
   },
   "author": {
     "name": "Your Name Here",
