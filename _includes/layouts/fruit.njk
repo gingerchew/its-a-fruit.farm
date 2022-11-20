@@ -17,20 +17,29 @@
           z-index: 100;
           display: flex;
           flex-flow: column;
+          gap: 0.5ch;
+        }
+        header::after {
+          content: unset;
         }
         .home {
-          margin-bottom: 0;
+          margin: 0;
+          padding-inline: 1rem;
+          padding-block: 0.75rem 0;
         }
         a[href],
         a[href]:visited {
           color: var(--link, #fff);
           text-decoration: none;
         }
+        h1 > a[href],
+        h1 > a[href]:visited {
+          border-bottom: 1px solid;
+        }
         ul {
           margin: 0;
           padding: 0;
-          margin-block-start: 10px;
-          margin-block-end: 30px;
+          padding-block: 0 0.75rem;
           padding-inline: 1rem;
           display: flex;
           flex-wrap: wrap;
@@ -41,7 +50,7 @@
           list-style-type: none;
         }
         .link {
-          font-size: 0.5rem;
+          font-size: 1rem;
         }
     </style>
   </head>
@@ -52,7 +61,7 @@
         <ul role="list">
           {% for fruit in collections.fruit %}
             {% if fruit.url != page.url %}
-              <li><a class="link" href="{{ fruit.url }}">{{ fruit.data.fruit }}</a></li>
+              <li><a class="link" href="{{ fruit.url }}">{{ fruit.data.fruit }} ⤍</a></li>
             {% endif %}
           {% endfor %}
         </ul>
