@@ -6,7 +6,7 @@
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
-
+    <link rel="icon" href="https://fav.farm/🚜" />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <style>
 body {
@@ -55,7 +55,13 @@ p {
   display: flex;
   align-items: center;
   gap: 2ch;
-  font-size: clamp(20px, 10vw, 40px);
+  font-size: clamp(20px, 10vw, 37px);
+}
+@media (max-width: 576px) {
+  .nav {
+    flex-flow: column;
+    gap: 0.5ch;
+  }
 }
 .tmpl-post {
   align-content: start;
