@@ -8,23 +8,55 @@
 
     {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
     <meta name="generator" content="{{ eleventy.generator }}">
-
+    <link rel="icon" href="https://fav.farm/{%- if emoji -%}{{ emoji }}{% else %}🚜{% endif %}" />
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <style>
         header {
-            position: fixed;
-            /* border-bottom: 1px dashed var(--color-gray-20); */
-            z-index: 100;
+          position: fixed;
+          /* border-bottom: 1px dashed var(--color-gray-20); */
+          z-index: 100;
+          display: flex;
+          flex-flow: column;
+        }
+        .home {
+          margin-bottom: 0;
+        }
+        a[href],
+        a[href]:visited {
+          color: var(--link, #fff);
+          text-decoration: none;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+          margin-block-start: 10px;
+          margin-block-end: 30px;
+          padding-inline: 1rem;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1ch;
+          justify-content: flex-end;
+        }
+        li {
+          list-style-type: none;
+        }
+        .link {
+          font-size: 0.5rem;
         }
     </style>
   </head>
   <body>
     <header>
-      <h1 class="home">&lt; <a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+      <h1 class="home">&#10508; <a href="{{ '/' | url }}">Back</a> &#11834; {{ title }}</h1>
+      <nav>
+        <ul role="list">
+          {% for fruit in collections.fruit %}
+            {% if fruit.url != page.url %}
+              <li><a class="link" href="{{ fruit.url }}">{{ fruit.data.fruit }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
