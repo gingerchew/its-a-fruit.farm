@@ -10,7 +10,7 @@
   --color-gray-50: #C0C0C0;
   --color-gray-90: #333;
 
-  --background-color: #fff;
+  --background-color: hsl(78deg 95% 95%);
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
@@ -26,8 +26,6 @@
     /* --text-color is assigned to --color-gray-_ above */
     --text-color-link: #1493fb;
     --text-color-link-visited: #a6a6f8;
-
-    --background-color: #15202b;
   }
 }
 
@@ -44,6 +42,7 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   background-color: var(--background-color);
+  font-size: clamp(16px, 2vw, 30px);
 }
 
 p:last-child {
