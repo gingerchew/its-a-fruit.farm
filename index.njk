@@ -4,6 +4,7 @@ layout: layouts/home.njk
 #  key: Home
 #  order: 1
 ---
+{#
 {% set maxPosts = collections.posts.length | min(3) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
@@ -12,3 +13,4 @@ layout: layouts/home.njk
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+#}
